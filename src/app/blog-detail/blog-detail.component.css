@@ -1,0 +1,9 @@
+.topic-title{
+  font-size:1.2rem;
+}
+.tabs{
+  display: flex;
+}
+.tab{
+  flex-grow:1;
+}

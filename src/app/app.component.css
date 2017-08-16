@@ -1,0 +1,48 @@
+.button-collapse{
+  display: block;
+}
+#nav-mobile{
+  display: block!important;
+}
+.dropdown-content{
+  margin-top:51px;
+  z-index: 0;
+}
+.dropdown-content a{
+  width:100%;
+}
+.top-nav img {
+  display: block;
+  max-height:30px;
+}
+.top-nav span{
+  width:30px;
+  height:30px;
+  margin-top:10px;
+}
+.top-nav span,.top-nav li a{
+  float: left;
+}
+.nav-text{
+  padding:0 15px;
+}
+.nav-text i{
+  height:50px;
+  line-height:50px;
+}
+footer{
+  margin-top:15px;
+}
+.share img{
+  width:40px;
+  height:40px;
+}
+.side-nav{
+  margin-top:50px;
+}
+.otherAccount a,.otherAccount img{
+  display: inline-block;
+  width:40px;
+  height:40px;
+  border-radius: 50%;
+}

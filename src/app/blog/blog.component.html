@@ -1,0 +1,92 @@
+<div class="row topics">
+  <div class="col s12 m12">
+    <ul class="tabs">
+      <li class="tab col s2 m2"><a href="#test1" class="active" (click)="getArticles(1)">javaScript</a></li>
+      <li class="tab col s2 m2"><a href="#test2" (click)="getArticles(2)">css</a></li>
+      <li class="tab col s2 m2"><a href="#test3" (click)="getArticles(3)">工具</a></li>
+      <li class="tab col s2 m2"><a href="#test4" (click)="getArticles(4)">后端</a></li>
+      <li class="tab col s2 m2"><a href="#test5" (click)="getArticles(5)">APP</a></li>
+      <li class="tab col s2 m2"><a href="#test6" (click)="getArticles(6)">行业</a></li>
+    </ul>
+  </div>
+  <div class="col s12 m9 topicList">
+    <div id="test{{type}}">
+      <div *ngFor="let a of list">
+        <div class="topic">
+          <a class="topic-title" title="{{a.summary}}" routerLink="../blogDetail" (click)="saveContent(a)">{{a.title}}</a>
+          <div>
+            <p class="text">{{a.meta.createAt|date:'yyyy.MM.dd'}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;阅读({{a.reading}})</p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="share fenxiang"></span>
+            <a target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?title={{a.title}}&url={{window}}" class="share qzone" title="分享到QQ空间"></a>
+            <a target="_blank" href="http://service.weibo.com/share/share.php?title={{a.title}}&url={{window}}" class="share weibo" title="分享到微博"></a>
+            <a target="_blank" href="javascript:;" class="share weichat" (mouseover)="toCode($event)" (mouseout)="hideCode()">
+              <div class="qrcode"></div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="loadMore" (click)="loadMore()" *ngIf="isShowloadMore">查看更多</div>
+      <div class="loadMore" *ngIf="!isShowloadMore">没有更多了</div>
+    </div>
+  </div>
+
+  <div class="col s12 m3">
+    <ul class="collection">
+      <li class="collection-item">
+        <a class="waves-effect waves-light btn block" routerLink="../admin">发布话题</a>
+      </li>
+      <li class="collection-item search-item">
+        <div class="input-field">
+          <input id="icon_prefix" type="text" class="validate" placeholder="搜索试试..." [(ngModel)]="keyword" (keyup)="keyup($event)">
+          <button class="btn-floating waves-effect waves-light btn search" (click)="searchTopic()"><i class="material-icons">search</i></button>
+        </div>
+      </li>
+    </ul>
+    <ul class="collection with-header navigation">
+      <li class="collection-header"><h6>热门节点</h6></li>
+      <li class="collection-item">
+        <a href="javascript:;" (click)="searchTopic('javascript')">JavaScript</a>
+        <a href="javascript:;" (click)="searchTopic('angular')">Angular</a>
+        <a href="javascript:;" (click)="searchTopic('vue')">vue</a>
+        <a href="javascript:;" (click)="searchTopic('react')">react</a>
+        <a href="javascript:;" (click)="searchTopic('前端')">前端其他</a>
+      </li>
+      <li class="collection-item">
+        <a href="javascript:;" (click)="searchTopic('webpack')">webpack</a>
+        <a href="javascript:;" (click)="searchTopic('css')">css3</a>
+        <a href="javascript:;" (click)="searchTopic('html')">html5</a>
+        <a href="javascript:;" (click)="searchTopic('app')">混合APP</a>
+      </li>
+      <li class="collection-item">
+        <a href="javascript:;" (click)="searchTopic('linux')">Linux</a>
+        <a href="javascript:;" (click)="searchTopic('node')">nodeJs</a>
+        <a href="javascript:;" (click)="searchTopic('mongo')">mongodb</a>
+        <a href="javascript:;" (click)="searchTopic('docker')">docker</a>
+        <a href="javascript:;" (click)="searchTopic('后端')">后端其他</a>
+      </li>
+    </ul>
+    <ul class="collection with-header">
+      <li class="collection-header"><h6>统计信息</h6></li>
+      <li class="collection-item">社区会员: 168 人</li>
+      <li class="collection-item">帖子数: 51 个</li>
+      <li class="collection-item">回帖数: 108 条</li>
+    </ul>
+    <ul class="collection with-header">
+      <li class="collection-header"><h6>友情链接</h6></li>
+      <li class="collection-item">
+        <a href="https://ruby-china.org/" target="_blank">
+          <img src="../../assets/images/rubyChina.png" alt="">
+        </a>
+      </li>
+      <li class="collection-item">
+        <a href="http://golangtc.com/" target="_blank">
+          <img src="../../assets/images/golangChina.png" alt="">
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+

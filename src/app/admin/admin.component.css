@@ -1,0 +1,20 @@
+.form{
+  background:#fff;
+  box-shadow: 2px 2px 3px #aaa;
+}
+select{
+  display: block;
+}
+#content{
+  min-height:500px!important;
+}
+.tabs li{
+  background: #eee;
+}
+.twemoji{
+  width:20px;height:20px;
+}
+#markdown{
+  width:100%;
+  min-height:100px;
+}

@@ -1,0 +1,91 @@
+<!--top navbar -->
+<div class="navbar-fixed ">
+  <nav class="top-nav cyan darken-3">
+    <div class="nav-wrapper">
+      <a href="#" data-activates="slide-out" class="button-collapse top-nav"><i class="material-icons top-nav">menu</i></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down top-nav">
+        <li  *ngIf="isloginIn">
+          <a class="dropdown-button nav-text" href="javascript:;" data-activates="dropdown1">
+            <span><img src="../assets/images/github.png" alt=""></span>
+            <i class="material-icons right">arrow_drop_down</i>
+          </a>
+        </li>
+        <li><a routerLink="../account" class="nav-text" *ngIf="!isloginIn">注册</a></li>
+        <li><a routerLink="../account" class="nav-text" *ngIf="!isloginIn">登录</a></li>
+        <li><a href="javascript:history.go(-1)" class="nav-text">返回</a></li>
+      </ul>
+    </div>
+  </nav>
+</div>
+<ul id="dropdown1" class="dropdown-content">
+  <li>{{username|| ''}}</li>
+  <li><a href="https://github.com/magiclyl" target="_blank">github</a></li>
+  <li><a href="http://www.cnblogs.com/lyls/" target="_blank">博客园</a></li>
+  <li><a href="#!">退出</a></li>
+</ul>
+<!--side navbar-->
+<ul id="slide-out" class="side-nav">
+  <li><div class="user-view">
+    <div class="background">
+      <img src="../assets/images/lyl.jpg">
+    </div>
+    <a href="#!user"><img class="circle" src="../assets/images/lyl.jpg"></a>
+    <a href="#!name"><span class="white-text name">李玉龙</span></a>
+    <a href="#!email"><span class="white-text email">生活的美好不局限于爱情</span></a>
+  </div></li>
+  <li><a routerLink="home"><i class="material-icons">home</i>主页</a></li>
+  <li><a routerLink="blog"><i class="material-icons">create</i>博客</a></li>
+  <li><a routerLink="project"><i class="material-icons">code</i>项目</a></li>
+  <li><a routerLink="sites"><i class="material-icons">archive</i>酷站</a></li>
+  <li class="no-padding">
+    <ul class="collapsible collapsible-accordion">
+      <li>
+        <a class="collapsible-header" routerLink="paradise">&nbsp;&nbsp;&nbsp;&nbsp;乐园<i class="material-icons">arrow_drop_down favorite_border</i></a>
+        <div class="collapsible-body">
+          <ul>
+            <li><a href="#!">电影</a></li>
+            <li><a href="#!">音乐</a></li>
+            <li><a href="#!">画廊</a></li>
+            <li><a href="#!">随笔</a></li>
+            <li><a href="#!">分享</a></li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </li>
+  <li><a routerLink="admin"><i class="material-icons">admin</i>管理后台</a></li>
+  <li><a routerLink="about"><i class="material-icons">mail_outline</i>关于</a></li>
+</ul>
+<div class="content">
+  <router-outlet></router-outlet>
+</div>
+<!--Footer-->
+<footer class="page-footer grey dark-1">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 m12 s12">
+        <h5 class="white-text">李玉龙的个人博客</h5>
+        <p class="grey-text text-lighten-4">A personal blog of YuLong Li，contact : 529134823@qq.com</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+      © 2017 Copyright
+      <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+    </div>
+  </div>
+</footer>
+
+<!--share-->
+<div class="fixed-action-btn">
+  <a class="btn-floating btn-large red">
+    <i class="large material-icons">share</i>
+  </a>
+  <ul class="share">
+    <li><a class="btn-floating" target="_blank" href="http://service.weibo.com/share/share.php?title={{123}}&url={{window.location.href}}"><img src="../assets/icon/weiBo.svg" alt=""></a></li>
+    <li><a class="btn-floating white"><img src="../assets/icon/weichat.svg" alt=""></a></li>
+    <li><a class="btn-floating green" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?title={{123}}&url={{window.location.href}}"><img src="../assets/icon/qzone.svg" alt=""></a></li>
+  </ul>
+</div>
+

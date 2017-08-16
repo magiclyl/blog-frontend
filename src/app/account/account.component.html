@@ -1,0 +1,59 @@
+<div class="row animate container">
+  <div class="col s12 m6">
+    <form action="" [formGroup]="signUpFormModel">
+      <ul class="collection with-header">
+        <li class="collection-header">登录:</li>
+        <li class="collection-item">
+          <div class="input-field">
+            <input id="username" type="text" class="validate" formControlName="name" required pattern="^.{3,30}$">
+            <label for="username" data-error="wrong" data-success="right">用户名</label>
+          </div>
+          <div class="input-field">
+            <input id="pwd" type="password" class="validate" formControlName="password" required pattern="^[A-Za-z0-9]{6,16}$">
+            <label for="pwd" data-error="wrong" data-success="right">密码</label>
+          </div>
+          <a class="btn btn-default btn-lg btn-block" (click)="signUp()">登录</a>
+          <div class="error-message" [class.fadeIn]="isShowErr">
+            <span class="error-icon">&times;</span><span id="error-message">帐户名或登录密码不正确，请重新输入</span>
+          </div>
+          <div class="checkbox">
+            <input type="checkbox" id="test5" />
+            <label for="test5" (click)="remember()">记住我( 60 天 )</label>
+            <span class="psw"><a href="#">忘记密码?</a></span>
+          </div><br><hr>
+          <h6>使用其他账号:</h6>
+          <div class="otherAccount">
+            <a class="" href="/account/auth/github"><img src="../../assets/icon/Git.png" alt=""></a>
+          </div>
+        </li>
+      </ul>
+    </form>
+  </div>
+
+  <div class="col s12 m6">
+    <form action="" [formGroup]="signInFormModel">
+      <ul class="collection with-header">
+        <li class="collection-header">注册:</li>
+        <li class="collection-item">
+          <div class="input-field">
+            <input id="user" type="text" class="validate" formControlName="name" required pattern="^.{3,30}$">
+            <label for="user" data-error="用户名格式不正确" data-success="right">用户名</label>
+          </div>
+          <div class="input-field">
+            <input id="password" type="password" class="validate" formControlName="password" required pattern="^[A-Za-z0-9]{6,16}$">
+            <label for="password" data-error="密码在6到16位之间" data-success="right">密码</label>
+          </div>
+          <div class="input-field">
+            <input id="confpwd" type="password" class="validate" formControlName="repwd" required pattern="^[A-Za-z0-9]{6,16}$">
+            <label for="confpwd" data-error="两次密码输入不一致" data-success="right">确认密码</label>
+          </div>
+          <div class="input-field">
+            <input id="email" type="email" class="validate" formControlName="email" required>
+            <label for="email" data-error="邮箱格式不正确" data-success="right">Email</label>
+          </div>
+          <a class="btn btn-default btn-lg btn-block" (click)="signIn()">注册</a>
+        </li>
+      </ul>
+    </form>
+  </div>
+</div>

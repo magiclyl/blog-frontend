@@ -1,0 +1,24 @@
+.panel {
+  border: 0px;
+  border-radius: 3px;
+  border: 1px solid #f5f5f5;
+  margin:0 5%;
+  margin-bottom: 15px;
+  background:#fafafa;
+  box-shadow:0px 2px 2px #aaa;
+}
+.panel .panel-heading {
+  background: #f5f5f5;
+  padding: 6px 15px;
+  border-bottom-color: #eee;
+  color: #777;
+}
+.panel-body {
+  padding: 15px;
+}
+.site {
+  margin-bottom: 12px;
+}
+.site a{
+  color: #666;
+}

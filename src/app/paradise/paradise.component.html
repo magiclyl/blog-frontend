@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col s12 m12">
+    <ul class="tabs">
+      <li class="tab col s2 m2"><a href="#test1" class="active">电影</a></li>
+      <li class="tab col s2 m2"><a href="#test2">随笔</a></li>
+      <li class="tab col s2 m2"><a href="#test3">分享</a></li>
+      <li class="tab col s2 m2"><a href="#test4">画廊</a></li>
+      <li class="tab col s2 m2"><a href="#test5">音乐</a></li>
+    </ul>
+  </div>
+  <div id="test1">
+    <div class="col s12 m2"  *ngFor="let a of [1,2,3,4,5,6,7,8]">
+      <a routerLink="movie">
+        <div class="card">
+          <div class="card-content">
+            <a href="" class="topic-title">钩子函数(hook)</a>
+            <p>I love movie,It makes me grow up</p>
+            <p align="right">2016年2月13日，星期六&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;阅读数：12</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div id="test2" class="col s12 m12">Test 2</div>
+  <div id="test3" class="col s12 m12">Test 3</div>
+  <div id="test4" class="col s12 m12">
+
+  </div>
+  <div id="test5" class="col s12 m12">Test 5</div>
+</div>
